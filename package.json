@@ -35,5 +35,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "reactivedb": "^0.11.0",
+    "rrule": "^2.6.6",
+    "rxjs": "^5.2.0",
+    "rxjs-hooks": "^0.6.2",
+    "teambition-sdk": "^0.12.89"
   }
 }
