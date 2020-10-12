@@ -1,11 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import 'teambition-sdk/apis/task';
+import 'teambition-sdk/apis/task';
 import { SDK } from 'teambition-sdk';
 import {ProjectId, TaskId} from 'teambition-types';
 import { of } from 'rxjs/observable/of'
-import { useObservable } from 'rxjs-hooks';
 
 function App() {
   const sdk = new SDK();
@@ -36,6 +35,14 @@ function App() {
       .publishReplay(1)
       .refCount();
 
+  sdk.getUserMe().values().catch((error) => {
+      console.error(error);
+      return of('get user me is error');
+  }).subscribe(console.log);
+
+  sdk.updateUser({ })
+
+  // sdk.updateUser
   project.subscribe(() => console.log('Project'))
   task.subscribe(() => console.log('get task'));
   subTask.subscribe(() => console.log('get sub task'));
